@@ -21,6 +21,7 @@ sudo cp ./cosmos-exporter /usr/bin
 rm cosmos-exporter* -rf
 
 sudo useradd -rs /bin/false cosmos_exporter
+sudo chown cosmos_exporter /usr/bin/cosmos-exporter
 
 sudo tee <<EOF >/dev/null /etc/systemd/system/cosmos-exporter.service
 [Unit]
@@ -51,6 +52,7 @@ sudo mv node_exporter-*.*-amd64/node_exporter /usr/local/bin/
 rm node_exporter-* -rf
 
 sudo useradd -rs /bin/false node_exporter
+sudo chown node_exporter /usr/local/bin/node_exporter
 
 sudo tee <<EOF >/dev/null /etc/systemd/system/node_exporter.service
 [Unit]
